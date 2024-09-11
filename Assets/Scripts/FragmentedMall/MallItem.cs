@@ -6,5 +6,5 @@ public class MallItem
 {
     public int Index;
     public SpriteRenderer SpriteRenderer;
-    public int ScoreValue;
+    public bool IsGood;
 }

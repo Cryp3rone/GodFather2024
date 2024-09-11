@@ -8,9 +8,11 @@ public class MallManager : MonoBehaviour
 
     public event Action<Sprite, int> OnQuestionAnswer;
 
+    [SerializeField] private int _goodPartsToWin;
     [SerializeField] private List<MallItem> _mallParts = new List<MallItem>();
 
-    [SerializeField] private int _score;
+    [SerializeField] private int _goodPartsCount;
+    [SerializeField] private int _badPartsCount;
 
     private void Awake()
     {
@@ -42,9 +44,29 @@ public class MallManager : MonoBehaviour
             {
                 item.SpriteRenderer.sprite = sprite;
 
-                _score += item.ScoreValue;
+                if(item.IsGood)
+                {
+                    _goodPartsCount++;
+                }
+                else
+                {
+                    _badPartsCount++;
+                }
+
                 return;
             }
+        }
+    }
+
+    private void CheckWinLose()
+    {
+        if( _goodPartsCount >= _goodPartsToWin )
+        {
+            //déclencher event de win
+        }
+        else
+        {
+            //déclencher event de lose
         }
     }
 }
