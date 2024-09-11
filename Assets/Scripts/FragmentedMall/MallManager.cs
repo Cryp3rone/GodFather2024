@@ -12,7 +12,6 @@ public class MallManager : MonoBehaviour
     [SerializeField] private List<MallItem> _mallParts = new List<MallItem>();
 
     [SerializeField] private int _goodPartsCount;
-    [SerializeField] private int _badPartsCount;
 
     private void Awake()
     {
@@ -48,11 +47,6 @@ public class MallManager : MonoBehaviour
                 {
                     _goodPartsCount++;
                 }
-                else
-                {
-                    _badPartsCount++;
-                }
-
                 return;
             }
         }
