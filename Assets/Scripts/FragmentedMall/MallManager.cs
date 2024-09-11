@@ -10,6 +10,8 @@ public class MallManager : MonoBehaviour
 
     [SerializeField] private List<MallItem> _mallParts = new List<MallItem>();
 
+    [SerializeField] private int _score;
+
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -39,6 +41,8 @@ public class MallManager : MonoBehaviour
             if(item.Index == index)
             {
                 item.SpriteRenderer.sprite = sprite;
+
+                _score += item.ScoreValue;
                 return;
             }
         }
