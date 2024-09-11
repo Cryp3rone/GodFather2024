@@ -17,4 +17,5 @@ public class Choice
 {
     public string proposition;
     public Sprite result;
+    public string resultText;
 }
