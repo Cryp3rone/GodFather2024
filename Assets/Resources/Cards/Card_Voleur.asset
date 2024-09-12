@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf10fbf7b11a04599b3ac3763330f7, type: 3}
+  m_Name: Card_Voleur
+  m_EditorClassIdentifier: 
+  cardName: Card_Voleur
+  cardQuestion: "Comment arr\xEAter les voleurs ?"
+  baseId: 5
+  isRobotGood: 0
+  goodChoice:
+    proposition: Un centre de police intergalactique.
+    result: {fileID: 0}
+    resultText: "Les voleurs n\u2019ont qu\u2019\xE0 bien se tenir !"
+  badChoice:
+    proposition: "Une prison volontaire o\xF9 les voleurs peuvent s'enfermer eux-m\xEAmes
+      s'ils ont vol\xE9."
+    result: {fileID: 0}
+    resultText: "La prison volontaire ne fonctionne pas. Quelle surprise. Quelle
+      id\xE9e aussi."

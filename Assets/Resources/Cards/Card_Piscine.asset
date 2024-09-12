@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf10fbf7b11a04599b3ac3763330f7, type: 3}
+  m_Name: Card_Piscine
+  m_EditorClassIdentifier: 
+  cardName: Card_Piscine
+  cardQuestion: "Dans quel sens installer la piscine anti-gravit\xE9 ?"
+  baseId: 1
+  isRobotGood: 1
+  goodChoice:
+    proposition: "L\u2019installer au sol."
+    result: {fileID: 0}
+    resultText: "Piscine install\xE9e, tous \xE0 l\u2019eau !"
+  badChoice:
+    proposition: "L\u2019installer au plafond."
+    result: {fileID: 0}
+    resultText: "La piscine a \xE9t\xE9 install\xE9e mais les clients ne peuvent
+      pas y acc\xE9der."

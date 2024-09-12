@@ -10,15 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dbf10fbf7b11a04599b3ac3763330f7, type: 3}
-  m_Name: Card1
+  m_Name: Card_Resto
   m_EditorClassIdentifier: 
-  cardName: Card1
-  cardQuestion: What?
-  baseId: 0
+  cardName: Card_Resto
+  cardQuestion: Quel combustible pour les cuisines des restaurants ?
+  baseId: 4
   isRobotGood: 1
   goodChoice:
-    proposition: good1
+    proposition: "Le Xlog, mat\xE9riau \xE9cologique, efficace et facile \xE0 produire."
     result: {fileID: 0}
+    resultText: Les restaurants tournent pafaitement !
   badChoice:
-    proposition: good2
+    proposition: "Du charbon, \xE0 l\u2019ancienne."
     result: {fileID: 0}
+    resultText: "La quantit\xE9 de fum\xE9e trop abondante a bloqu\xE9 les a\xE9rations
+      et empoisonn\xE9 les clients."
