@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _loseScreen;
     [SerializeField] private GameObject boxResult;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private Transform resultHidePose, resultShowPose;
 
     private void Awake()
     {
