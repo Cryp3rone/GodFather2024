@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     [SerializeField] private GameObject _winScreen;
     [SerializeField] private GameObject _loseScreen;
+    [SerializeField] private GameObject boxResult;
 
     private void Awake()
     {
@@ -17,6 +19,30 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
+        }
+
+        boxResult.SetActive(false);
+    }
+
+    public void Start()
+    {
+        CardManager.Instance.ShowPropositions(CardManager.Instance.cardDatas.First());
+    }
+
+    public void ShowResult()
+    => boxResult.SetActive(true);
+
+    public void OnClickResult()
+    {
+        boxResult.SetActive(false);
+
+        if (CardManager.Instance.cardDatas.Count > 0)
+        {
+            CardManager.Instance.ShowPropositions(CardManager.Instance.cardDatas.First());
+        }
+        else
+        {
+            CheckWinLose();
         }
     }
 

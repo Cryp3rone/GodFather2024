@@ -28,8 +28,5 @@ public class Card : MonoBehaviour
     }
 
     public void SendChoice()
-    {
-        Debug.Log(data.proposition);
-        MallManager.Instance.InvokeOnQuestionAnswer(data.result, baseId);
-    }
+        => CardManager.Instance.UpdateChoice(data, baseId);
 }

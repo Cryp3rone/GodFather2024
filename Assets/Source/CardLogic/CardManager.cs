@@ -1,4 +1,5 @@
 using System;
+using System.Buffers.Text;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -16,8 +17,9 @@ public class CardManager : MonoBehaviour
     [SerializeField] private GameObject questionBox;
     [SerializeField] private GameObject propAlienBox;
     [SerializeField] private GameObject propRobotBox;
+    [SerializeField] private TextMeshProUGUI textResult;
     [SerializeField] private TextMeshProUGUI questionText;
-    private bool isCardsDisplayed;
+
 
     private int currentCardID;
 
@@ -28,17 +30,13 @@ public class CardManager : MonoBehaviour
         propAlienBox.SetActive(false);
         propRobotBox.SetActive(false);
         questionBox.SetActive(false);
-        isCardsDisplayed = false;
 
         cardDatas = Resources.LoadAll<CardData>("Cards").ToList();
-        currentCardID = 0;
 
         foreach (CardData card in cardDatas)
         {
             Debug.Log(card.cardName);
         }
-        
-        ShowPropositions(cardDatas[currentCardID]);
     }
 
     private void OnEnable()
@@ -51,14 +49,6 @@ public class CardManager : MonoBehaviour
         OnPropositionFinished -= ShowPropositions;
     }
 
-    public void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            ShowPropositions(cardDatas[currentCardID]);
-        }
-    }
-
     public void ShowPropositions(CardData data)
     {
         Debug.Log("show proposition");
@@ -66,7 +56,6 @@ public class CardManager : MonoBehaviour
         propAlienBox.SetActive(true);
         propRobotBox.SetActive(true);
         questionBox.SetActive(true);
-        isCardsDisplayed = true;
 
         questionText.text = data.cardQuestion;
 
@@ -88,25 +77,20 @@ public class CardManager : MonoBehaviour
         propRobotBox.GetComponent<Card>().SetCard(data.baseId, robotChoice);
     }
 
+    public void UpdateChoice(Choice data, int baseId)
+    {
+        textResult.text = data.resultText;
+        HidePropsoitions();
+        MallManager.Instance.InvokeOnQuestionAnswer(data.result, baseId);
+        cardDatas.RemoveAt(0);
+        GameManager.Instance.ShowResult();
+    }
+
     public void HidePropsoitions()
     {
         propAlienBox.SetActive(false);
         propRobotBox.SetActive(false);
         questionBox.SetActive(false);
-        isCardsDisplayed = false;
     }
 
-    public void InvokeOnFinishedProposition()
-    {
-        cardDatas.RemoveAt(currentCardID);
-
-        if (cardDatas.Count > 0)
-        {
-            OnPropositionFinished?.Invoke(cardDatas[currentCardID]);
-        }
-        else
-        {
-            GameManager.Instance.CheckWinLose();
-        }
-    }
 }

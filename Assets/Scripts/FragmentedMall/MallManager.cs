@@ -46,8 +46,5 @@ public class MallManager : MonoBehaviour
     }
 
     public void InvokeOnQuestionAnswer(Sprite sprite, int index)
-    {
-        OnQuestionAnswer?.Invoke(sprite, index);
-        CardManager.Instance.InvokeOnFinishedProposition();
-    }
+        => OnQuestionAnswer?.Invoke(sprite, index);
 }
