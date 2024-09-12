@@ -1618,6 +1618,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestionBox
       objectReference: {fileID: 0}
+    - target: {fileID: 4823599711090381751, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823599711090381751, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823599711090381751, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -165
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018022000333639748, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018022000333639748, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 5135082957089525673, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
       propertyPath: m_SizeDelta.x
       value: 700
@@ -1657,6 +1677,18 @@ PrefabInstance:
     - target: {fileID: 7200254413695119266, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
       propertyPath: m_Name
       value: CardManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418821699028811803, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418821699028811803, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418821699028811803, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8683319645906220657, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
       propertyPath: prop1Box
@@ -1733,12 +1765,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
 --- !u!1 &1676983107 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1426207466817919939, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3490691116344432574, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
   m_PrefabInstance: {fileID: 1676983106}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1676983108 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 9119107612442754869, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1474155325546873874, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
   m_PrefabInstance: {fileID: 1676983106}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1688977696

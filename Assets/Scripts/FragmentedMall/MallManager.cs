@@ -8,7 +8,7 @@ public class MallManager : MonoBehaviour
 {
     public static MallManager Instance { get; private set; }
 
-    public event Action<Sprite, int> OnQuestionAnswer;
+    public event Action<Choice, int> OnQuestionAnswer;
 
 
     [SerializeField] private List<MallItem> _mallParts = new List<MallItem>();
@@ -28,23 +28,24 @@ public class MallManager : MonoBehaviour
         OnQuestionAnswer -= ShowPart;
     }
 
-    private void ShowPart(Sprite sprite, int index)
+    private void ShowPart(Choice choiceData, int index)
     {
         foreach (MallItem item in _mallParts)
         {
             if(item.Index == index)
             {
-                item.SpriteRenderer.sprite = sprite;
+                item.SpriteRenderer.sprite = choiceData.result;
 
-                if(item.IsGood)
+                if(choiceData.isRight)
                 {
                     GoodPartsCount++;
+                    Debug.Log(GoodPartsCount);
                 }
                 return;
             }
         }
     }
 
-    public void InvokeOnQuestionAnswer(Sprite sprite, int index)
-        => OnQuestionAnswer?.Invoke(sprite, index);
+    public void InvokeOnQuestionAnswer(Choice choiceData, int index)
+        => OnQuestionAnswer?.Invoke(choiceData, index);
 }

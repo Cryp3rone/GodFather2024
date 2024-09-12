@@ -13,7 +13,6 @@ public class CardManager : MonoBehaviour
 
     public event Action<CardData> OnPropositionFinished;
 
-    [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject questionBox;
     [SerializeField] private GameObject propAlienBox;
     [SerializeField] private GameObject propRobotBox;
@@ -81,7 +80,7 @@ public class CardManager : MonoBehaviour
     {
         textResult.text = data.resultText;
         HidePropsoitions();
-        MallManager.Instance.InvokeOnQuestionAnswer(data.result, baseId);
+        MallManager.Instance.InvokeOnQuestionAnswer(data, baseId);
         cardDatas.RemoveAt(0);
         GameManager.Instance.ShowResult();
     }

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf10fbf7b11a04599b3ac3763330f7, type: 3}
+  m_Name: Card_Toilette
+  m_EditorClassIdentifier: 
+  cardName: Card_Toilette
+  cardQuestion: Comment assurer le fonctionnement des toilettes ?
+  baseId: 7
+  isRobotGood: 0
+  goodChoice:
+    isRight: 1
+    proposition: "Un syst\xE8me de propulsion m\xE9canique."
+    result: {fileID: 0}
+    resultText: Voici des toilettes qui feront le plaisir des clients.
+  badChoice:
+    isRight: 0
+    proposition: "Un syst\xE8me d\u2019\xE9go\xFBt anti-gravitationnel."
+    result: {fileID: 0}
+    resultText: "Avec ce syst\xE8me anti-gravit\xE9, les d\xE9chets reviennent directement
+      \xE0 l'envoyeur. Il est impossible d'ouvrir les toilettes dans ces conditions
+      !"

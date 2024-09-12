@@ -10,17 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dbf10fbf7b11a04599b3ac3763330f7, type: 3}
-  m_Name: Card1 4
+  m_Name: Card_Musique
   m_EditorClassIdentifier: 
-  cardName: Card5
-  cardQuestion: ????
-  baseId: 4
+  cardName: Card_Musique
+  cardQuestion: "Quelle musique choisir pour \xE9gayer le centre commercial ?"
+  baseId: 9
   isRobotGood: 0
   goodChoice:
-    proposition: vvvvvvvvvvvv
-    result: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-    resultText: 
+    isRight: 1
+    proposition: "Utilisons la derni\xE8re musique que j'ai compos\xE9e."
+    result: {fileID: 0}
+    resultText: Excellent choix.
   badChoice:
-    proposition: cccccccccccc
-    result: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-    resultText: 
+    isRight: 0
+    proposition: Utilisons de la musique pop martienne.
+    result: {fileID: 0}
+    resultText: Excellent choix.
