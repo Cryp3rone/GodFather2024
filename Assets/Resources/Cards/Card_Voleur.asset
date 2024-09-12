@@ -17,10 +17,12 @@ MonoBehaviour:
   baseId: 5
   isRobotGood: 0
   goodChoice:
+    isRight: 1
     proposition: Un centre de police intergalactique.
     result: {fileID: 0}
     resultText: "Les voleurs n\u2019ont qu\u2019\xE0 bien se tenir !"
   badChoice:
+    isRight: 0
     proposition: "Une prison volontaire o\xF9 les voleurs peuvent s'enfermer eux-m\xEAmes
       s'ils ont vol\xE9."
     result: {fileID: 0}

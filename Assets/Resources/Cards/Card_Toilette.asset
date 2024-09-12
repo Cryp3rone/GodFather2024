@@ -17,10 +17,12 @@ MonoBehaviour:
   baseId: 7
   isRobotGood: 0
   goodChoice:
+    isRight: 1
     proposition: "Un syst\xE8me de propulsion m\xE9canique."
     result: {fileID: 0}
     resultText: Voici des toilettes qui feront le plaisir des clients.
   badChoice:
+    isRight: 0
     proposition: "Un syst\xE8me d\u2019\xE9go\xFBt anti-gravitationnel."
     result: {fileID: 0}
     resultText: "Avec ce syst\xE8me anti-gravit\xE9, les d\xE9chets reviennent directement

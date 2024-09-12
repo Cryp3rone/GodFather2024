@@ -17,10 +17,12 @@ MonoBehaviour:
   baseId: 0
   isRobotGood: 1
   goodChoice:
+    isRight: 1
     proposition: "Oui, nos anc\xEAtres le m\xE9ritent."
     result: {fileID: 0}
     resultText: Un bel hommage est rendu avec cette statue.
   badChoice:
+    isRight: 0
     proposition: "Et pourquoi pas une m**** dor\xE9e \xE0 la place ?"
     result: {fileID: 0}
     resultText: "M**** dor\xE9e construite. Pourquoi avoir fait-\xE7a ?"

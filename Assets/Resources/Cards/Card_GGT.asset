@@ -17,11 +17,13 @@ MonoBehaviour:
   baseId: 8
   isRobotGood: 0
   goodChoice:
+    isRight: 1
     proposition: "Cr\xE9ons une salle de repos de 100 km\xB2 pour leur permettre
       de se reposer."
     result: {fileID: 0}
     resultText: "Parfait pour se d\xE9tendre apr\xE8s une longue journ\xE9e de travail."
   badChoice:
+    isRight: 0
     proposition: "Transformons tous les employ\xE9s en robots. Au moins, ils ne se
       plaindront pas."
     result: {fileID: 0}

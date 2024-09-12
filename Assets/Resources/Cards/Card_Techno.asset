@@ -17,11 +17,13 @@ MonoBehaviour:
   baseId: 3
   isRobotGood: 0
   goodChoice:
+    isRight: 1
     proposition: "Un arbre \xE0 feuilles. Il produit beacoup de feuilles."
     result: {fileID: 0}
     resultText: "L\u2019arbre attire beaucoup de curieux et le centre-commercial
       s\u2019en porte bien."
   badChoice:
+    isRight: 0
     proposition: "Installer la nouvelle IA ultra-performante avec une technologie
       \xE0 trou blanc qui permet de donner une r\xE9ponse avant m\xEAme que la question
       soit pos\xE9e"

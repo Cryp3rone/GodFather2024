@@ -17,10 +17,12 @@ MonoBehaviour:
   baseId: 1
   isRobotGood: 1
   goodChoice:
+    isRight: 1
     proposition: "L\u2019installer au sol."
     result: {fileID: 0}
     resultText: "Piscine install\xE9e, tous \xE0 l\u2019eau !"
   badChoice:
+    isRight: 0
     proposition: "L\u2019installer au plafond."
     result: {fileID: 0}
     resultText: "La piscine a \xE9t\xE9 install\xE9e mais les clients ne peuvent

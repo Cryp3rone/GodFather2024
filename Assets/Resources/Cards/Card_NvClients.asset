@@ -17,10 +17,12 @@ MonoBehaviour:
   baseId: 2
   isRobotGood: 0
   goodChoice:
+    isRight: 1
     proposition: Construire un hall pour accueillir tout le monde.
     result: {fileID: 0}
     resultText: Hall construit, les clients affluent !
   badChoice:
+    isRight: 0
     proposition: "Mettre en place plusieurs portes d\u2019entr\xE9e."
     result: {fileID: 0}
     resultText: "Certaines portent on men\xE9 sur le vide spatial et aspir\xE9 des

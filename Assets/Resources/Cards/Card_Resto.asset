@@ -17,10 +17,12 @@ MonoBehaviour:
   baseId: 4
   isRobotGood: 1
   goodChoice:
+    isRight: 1
     proposition: "Le Xlog, mat\xE9riau \xE9cologique, efficace et facile \xE0 produire."
     result: {fileID: 0}
     resultText: Les restaurants tournent pafaitement !
   badChoice:
+    isRight: 0
     proposition: "Du charbon, \xE0 l\u2019ancienne."
     result: {fileID: 0}
     resultText: "La quantit\xE9 de fum\xE9e trop abondante a bloqu\xE9 les a\xE9rations

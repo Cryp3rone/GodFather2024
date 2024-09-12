@@ -17,10 +17,12 @@ MonoBehaviour:
   baseId: 9
   isRobotGood: 0
   goodChoice:
+    isRight: 1
     proposition: "Utilisons la derni\xE8re musique que j'ai compos\xE9e."
     result: {fileID: 0}
     resultText: Excellent choix.
   badChoice:
+    isRight: 0
     proposition: Utilisons de la musique pop martienne.
     result: {fileID: 0}
     resultText: Excellent choix.

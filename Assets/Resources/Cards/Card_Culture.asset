@@ -17,10 +17,12 @@ MonoBehaviour:
   baseId: 6
   isRobotGood: 0
   goodChoice:
+    isRight: 1
     proposition: "Un bonne vieille peinture bleue. C\u2019est bien le bleu."
     result: {fileID: 0}
     resultText: "C\u2019est vrai que c\u2019est bien le bleu."
   badChoice:
+    isRight: 0
     proposition: "Prenons la texture num\xE9ris\xE9e pour pouvoir faire varier les
       d\xE9corations facilement."
     result: {fileID: 0}
