@@ -651,6 +651,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &778293381 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 747832887061259084, guid: 2127f142fa94f014993b06510f4149e6, type: 3}
+  m_PrefabInstance: {fileID: 2122500857}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &823260962
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,11 +746,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &833205200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4198779982451159785, guid: 2127f142fa94f014993b06510f4149e6, type: 3}
-  m_PrefabInstance: {fileID: 2122500857}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &836407089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,10 +1010,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _winScreen: {fileID: 211519032}
   _loseScreen: {fileID: 1939304085}
-  boxResult: {fileID: 833205200}
+  boxResult: {fileID: 1610498863}
   pauseMenu: {fileID: 0}
   resultHidePose: {fileID: 2013466726}
   resultShowPose: {fileID: 467707673}
+  resultButton: {fileID: 778293381}
 --- !u!1 &989463959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,6 +1601,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1610498863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6610885141822744188, guid: 2127f142fa94f014993b06510f4149e6, type: 3}
+  m_PrefabInstance: {fileID: 2122500857}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1676983106
 PrefabInstance:
   m_ObjectHideFlags: 0

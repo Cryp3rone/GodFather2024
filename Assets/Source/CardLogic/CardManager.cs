@@ -21,8 +21,8 @@ public class CardManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI questionText;
     [SerializeField] private Transform hideQuestionPose, showQuestionPose, AlienHidePose, RobotHidePose, CharShowPose;
 
-
     private int currentCardID;
+    private KeyValuePair<int, Choice> choiceBaseId;
 
     private void Awake() => Instance = this;
 
@@ -89,17 +89,24 @@ public class CardManager : MonoBehaviour
     public void UpdateChoice(Choice data, int baseId)
     {
         textResult.text = data.resultText;
-        HidePropsoitions();
-        MallManager.Instance.InvokeOnQuestionAnswer(data, baseId);
+        choiceBaseId = new KeyValuePair<int, Choice>(baseId, data);
+        HidePropsoitions(OnCompleteHiding);
+    }
+
+    public void HidePropsoitions(TweenCallback action)
+    {
+        propAlienBox.transform.DOMoveX(AlienHidePose.transform.position.x, 0.5f).SetEase(Ease.InBack);
+        propRobotBox.transform.DOMoveX(RobotHidePose.transform.position.x, 0.5f).SetEase(Ease.InBack);
+        questionBox.transform.DOMoveY(hideQuestionPose.transform.position.y, 0.5f).SetEase(Ease.InBack).OnComplete(action);
+    }
+
+    private void OnCompleteHiding()
+    {
+        propAlienBox.SetActive(false);
+        propRobotBox.SetActive(false);
+        questionBox.SetActive(false);
+        MallManager.Instance.InvokeOnQuestionAnswer(choiceBaseId.Value, choiceBaseId.Key);
         cardDatas.RemoveAt(0);
         GameManager.Instance.ShowResult();
     }
-
-    public void HidePropsoitions()
-    {
-        propAlienBox.transform.DOMoveX(AlienHidePose.transform.position.x, 0.5f).SetEase(Ease.InBack).OnComplete(() => propAlienBox.SetActive(false));
-        propRobotBox.transform.DOMoveX(RobotHidePose.transform.position.x, 0.5f).SetEase(Ease.InBack).OnComplete(() => propRobotBox.SetActive(false));
-        questionBox.transform.DOMoveY(hideQuestionPose.transform.position.y, 0.5f).SetEase(Ease.InBack).OnComplete(() => questionBox.SetActive(false));
-    }
-
 }
