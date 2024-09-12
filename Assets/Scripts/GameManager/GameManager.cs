@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _winScreen;
     [SerializeField] private GameObject _loseScreen;
     [SerializeField] private GameObject boxResult;
+    [SerializeField] private GameObject pauseMenu;
 
     private void Awake()
     {
@@ -27,6 +28,20 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         CardManager.Instance.ShowPropositions(CardManager.Instance.cardDatas.First());
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if (!pauseMenu.activeSelf)
+            {
+                pauseMenu.SetActive(true);
+                return;
+            }
+
+            pauseMenu.SetActive(false);
+        }
     }
 
     public void ShowResult()
