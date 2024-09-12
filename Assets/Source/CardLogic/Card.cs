@@ -30,7 +30,6 @@ public class Card : MonoBehaviour
     public void SendChoice()
     {
         Debug.Log(data.proposition);
-        //BuildingManager.update.invoke(baseId, data.sprite)
-        CardManager.Instance.HidePropsoitions();
+        MallManager.Instance.InvokeOnQuestionAnswer(data.result, baseId);
     }
 }

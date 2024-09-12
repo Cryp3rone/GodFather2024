@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -9,12 +10,16 @@ public class CardManager : MonoBehaviour
 
     public List<CardData> cardDatas;
 
+    public event Action<CardData> OnPropositionFinished;
+
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject questionBox;
     [SerializeField] private GameObject propAlienBox;
     [SerializeField] private GameObject propRobotBox;
     [SerializeField] private TextMeshProUGUI questionText;
     private bool isCardsDisplayed;
+
+    private int currentCardID;
 
     private void Awake() => Instance = this;
 
@@ -26,23 +31,38 @@ public class CardManager : MonoBehaviour
         isCardsDisplayed = false;
 
         cardDatas = Resources.LoadAll<CardData>("Cards").ToList();
+        currentCardID = 0;
 
         foreach (CardData card in cardDatas)
         {
             Debug.Log(card.cardName);
         }
+        
+        ShowPropositions(cardDatas[currentCardID]);
+    }
+
+    private void OnEnable()
+    {
+        OnPropositionFinished += ShowPropositions;
+    }
+
+    private void OnDisable()
+    {
+        OnPropositionFinished -= ShowPropositions;
     }
 
     public void Update()
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            ShowPropositions(cardDatas[0]);
+            ShowPropositions(cardDatas[currentCardID]);
         }
     }
 
     public void ShowPropositions(CardData data)
     {
+        Debug.Log("show proposition");
+
         propAlienBox.SetActive(true);
         propRobotBox.SetActive(true);
         questionBox.SetActive(true);
@@ -74,5 +94,19 @@ public class CardManager : MonoBehaviour
         propRobotBox.SetActive(false);
         questionBox.SetActive(false);
         isCardsDisplayed = false;
+    }
+
+    public void InvokeOnFinishedProposition()
+    {
+        cardDatas.RemoveAt(currentCardID);
+
+        if (cardDatas.Count > 0)
+        {
+            OnPropositionFinished?.Invoke(cardDatas[currentCardID]);
+        }
+        else
+        {
+            GameManager.Instance.CheckWinLose();
+        }
     }
 }

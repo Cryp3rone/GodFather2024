@@ -1,29 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class MallManager : MonoBehaviour
 {
-    public static MallManager Instance;
+    public static MallManager Instance { get; private set; }
 
     public event Action<Sprite, int> OnQuestionAnswer;
 
-    [SerializeField] private int _goodPartsToWin;
+
     [SerializeField] private List<MallItem> _mallParts = new List<MallItem>();
+    
+    public int GoodPartsCount { get; private set; }
+    public int GoodPartsToWin { get; private set; }
 
-    [SerializeField] private int _goodPartsCount;
-
-    private void Awake()
-    {
-        if(Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
-    }
+    private void Awake() => Instance = this;
 
     private void OnEnable()
     {
@@ -45,22 +38,16 @@ public class MallManager : MonoBehaviour
 
                 if(item.IsGood)
                 {
-                    _goodPartsCount++;
+                    GoodPartsCount++;
                 }
                 return;
             }
         }
     }
 
-    private void CheckWinLose()
+    public void InvokeOnQuestionAnswer(Sprite sprite, int index)
     {
-        if( _goodPartsCount >= _goodPartsToWin )
-        {
-            //déclencher event de win
-        }
-        else
-        {
-            //déclencher event de lose
-        }
+        OnQuestionAnswer?.Invoke(sprite, index);
+        CardManager.Instance.InvokeOnFinishedProposition();
     }
 }

@@ -18,7 +18,9 @@ MonoBehaviour:
   isRobotGood: 1
   goodChoice:
     proposition: good1
-    result: {fileID: 0}
+    result: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+    resultText: 
   badChoice:
     proposition: good2
-    result: {fileID: 0}
+    result: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+    resultText: 
