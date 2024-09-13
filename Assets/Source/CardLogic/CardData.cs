@@ -15,6 +15,7 @@ public class CardData : ScriptableObject
 [Serializable]
 public class Choice
 {
+    public bool isRight = false;
     public string proposition;
     public Sprite result;
     public string resultText;

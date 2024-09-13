@@ -320,18 +320,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc6f67f43406ff438a0481abd861ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  _goodPartsToWin: 0
   _mallParts:
-  - SpriteRenderer: {fileID: 1985188912}
-    Index: 0
-  - SpriteRenderer: {fileID: 375087862}
-    Index: 1
-  - SpriteRenderer: {fileID: 1792718180}
-    Index: 2
-  - SpriteRenderer: {fileID: 285083321}
-    Index: 3
-  - SpriteRenderer: {fileID: 667477023}
-    Index: 4
+  - Index: 0
+    SpriteRenderer: {fileID: 1985188912}
+    IsGood: 0
+  - Index: 1
+    SpriteRenderer: {fileID: 375087862}
+    IsGood: 0
+  - Index: 2
+    SpriteRenderer: {fileID: 1792718180}
+    IsGood: 0
+  - Index: 3
+    SpriteRenderer: {fileID: 285083321}
+    IsGood: 0
+  - Index: 4
+    SpriteRenderer: {fileID: 667477023}
+    IsGood: 0
+  _goodPartsCount: 0
 --- !u!4 &504215501
 Transform:
   m_ObjectHideFlags: 0

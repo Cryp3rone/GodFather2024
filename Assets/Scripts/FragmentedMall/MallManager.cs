@@ -1,29 +1,26 @@
+using DG.Tweening;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class MallManager : MonoBehaviour
 {
-    public static MallManager Instance;
+    public static MallManager Instance { get; private set; }
 
-    public event Action<Sprite, int> OnQuestionAnswer;
+    public event Action<Choice, int> OnQuestionAnswer;
 
-    [SerializeField] private int _goodPartsToWin;
+
     [SerializeField] private List<MallItem> _mallParts = new List<MallItem>();
 
-    [SerializeField] private int _goodPartsCount;
+    [SerializeField] private float modulesAnimationScale;
+    [SerializeField] private float modulesAnimationTime;
+    
+    public int GoodPartsCount { get; private set; }
+    public int GoodPartsToWin { get; private set; }
 
-    private void Awake()
-    {
-        if(Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
-    }
+    private void Awake() => Instance = this;
 
     private void OnEnable()
     {
@@ -35,32 +32,34 @@ public class MallManager : MonoBehaviour
         OnQuestionAnswer -= ShowPart;
     }
 
-    private void ShowPart(Sprite sprite, int index)
+    private void ShowPart(Choice choiceData, int index)
     {
         foreach (MallItem item in _mallParts)
         {
             if(item.Index == index)
             {
-                item.SpriteRenderer.sprite = sprite;
+                item.SpriteRenderer.sprite = choiceData.result;
 
-                if(item.IsGood)
+                Debug.Log(choiceData.result);
+
+                if(choiceData.isRight)
                 {
-                    _goodPartsCount++;
+                    GoodPartsCount++;
+                    Debug.Log(GoodPartsCount);
                 }
+
+                item.SpriteRenderer.transform.DOScale(modulesAnimationScale, modulesAnimationTime).SetEase(Ease.InExpo).OnComplete(() => resetOnComplete(item));
+                
                 return;
             }
         }
     }
 
-    private void CheckWinLose()
+    public void InvokeOnQuestionAnswer(Choice choiceData, int index)
+        => OnQuestionAnswer?.Invoke(choiceData, index);
+
+    private void resetOnComplete(MallItem item)
     {
-        if( _goodPartsCount >= _goodPartsToWin )
-        {
-            //déclencher event de win
-        }
-        else
-        {
-            //déclencher event de lose
-        }
+        item.SpriteRenderer.transform.DOScale(1, modulesAnimationTime / 4).SetEase(Ease.OutBounce);
     }
 }
