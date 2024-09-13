@@ -14,7 +14,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private Button button;
     [SerializeField] private Slider buttonFill;
     //[SerializeField] private float timeToFillButton;
-    //[SerializeField] private GameObject buttonBorder;
+    [SerializeField] private GameObject buttonBorder;
     [SerializeField] private Ease buttonAnimationEasing;
     [SerializeField] private float buttonAnimationTime;
     [SerializeField] private float buttonAnimationScale;
@@ -58,14 +58,14 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         transform.DOScale(buttonAnimationScale, buttonAnimationTime).SetEase(buttonAnimationEasing);
         button.image.DOColor(buttonAnimationEnterColor, buttonAnimationTime);
-        //buttonBorder.gameObject.SetActive(true);
+        buttonBorder.gameObject.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         transform.DOScale(1, buttonAnimationTime).SetEase(buttonAnimationEasing);
         button.image.DOColor(buttonAnimationExitColor, buttonAnimationTime);
-        //buttonBorder.gameObject.SetActive(false);
+        buttonBorder.gameObject.SetActive(false);
     }
 
 /*    public void OnPointerDown(PointerEventData eventData)

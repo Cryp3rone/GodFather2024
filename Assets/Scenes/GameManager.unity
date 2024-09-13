@@ -2135,6 +2135,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 345
       objectReference: {fileID: 0}
+    - target: {fileID: 906270608415467303, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 906270608415467303, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 949251503390893263, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
       propertyPath: m_BlockingMask.m_Bits
       value: 4294967295
@@ -2194,6 +2202,14 @@ PrefabInstance:
     - target: {fileID: 2677647956447651959, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
       propertyPath: m_Name
       value: QuestionBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924970547333936267, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924970547333936267, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: m_Color.g
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3059809417499146891, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
       propertyPath: m_margin.y

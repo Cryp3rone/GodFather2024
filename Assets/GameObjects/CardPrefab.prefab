@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.79883075, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -379,6 +379,7 @@ MonoBehaviour:
   tmp: {fileID: 5369005175915247383}
   button: {fileID: 2152444620734302942}
   buttonFill: {fileID: 0}
+  buttonBorder: {fileID: 4007960254006525995}
   buttonAnimationEasing: 0
   buttonAnimationTime: 0
   buttonAnimationScale: 0
