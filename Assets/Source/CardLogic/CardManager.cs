@@ -1,8 +1,10 @@
 using System;
 using System.Buffers.Text;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class CardManager : MonoBehaviour
@@ -18,9 +20,12 @@ public class CardManager : MonoBehaviour
     [SerializeField] private GameObject propRobotBox;
     [SerializeField] private TextMeshProUGUI textResult;
     [SerializeField] private TextMeshProUGUI questionText;
+    [SerializeField] private float secondBetweenLetters;
 
 
     private int currentCardID;
+
+    private Coroutine textCoroutine;
 
     private void Awake() => Instance = this;
 
@@ -56,7 +61,9 @@ public class CardManager : MonoBehaviour
         propRobotBox.SetActive(true);
         questionBox.SetActive(true);
 
-        questionText.text = data.cardQuestion;
+        if(textCoroutine != null) StopCoroutine(textCoroutine);
+        StartCoroutine(TypeSentence(questionText, data.cardQuestion));
+        //questionText.text = data.cardQuestion;
 
         Choice robotChoice = data.goodChoice;
         Choice alienChoice = data.badChoice;
@@ -78,7 +85,9 @@ public class CardManager : MonoBehaviour
 
     public void UpdateChoice(Choice data, int baseId)
     {
-        textResult.text = data.resultText;
+        if (textCoroutine != null) StopCoroutine(textCoroutine);
+        StartCoroutine(TypeSentence(textResult, data.resultText));
+        //textResult.text = data.resultText;
         HidePropsoitions();
         MallManager.Instance.InvokeOnQuestionAnswer(data, baseId);
         cardDatas.RemoveAt(0);
@@ -92,4 +101,13 @@ public class CardManager : MonoBehaviour
         questionBox.SetActive(false);
     }
 
+    private IEnumerator TypeSentence (TextMeshProUGUI textComponent, string sentence)
+    {
+        textComponent.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            textComponent.text += letter;
+            yield return new WaitForSeconds(secondBetweenLetters);
+        }
+    }
 }
