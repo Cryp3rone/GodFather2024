@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _winScreen;
     [SerializeField] private GameObject _loseScreen;
     [SerializeField] private GameObject boxResult;
+    [SerializeField] private GameObject Result;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private Transform resultHidePose, resultShowPose;
     [SerializeField] private Button resultButton;
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        boxResult.SetActive(false);
+        Result.SetActive(false);
         boxResult.transform.position = resultHidePose.position;
         resultButton.interactable = false;
     }
@@ -53,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowResult()
     {
-        boxResult.SetActive(true);
+        Result.SetActive(true);
         boxResult.transform.DOMoveY(resultShowPose.position.y, 2f).SetEase(Ease.OutBack).OnComplete(() => resultButton.interactable = true);
     }
 
@@ -70,7 +71,7 @@ public class GameManager : MonoBehaviour
 
     public void OnCompleteHide()
     {
-        boxResult.SetActive(false);
+        Result.SetActive(false);
         if (CardManager.Instance.cardDatas.Count > 0)
         {
             CardManager.Instance.ShowPropositions(CardManager.Instance.cardDatas.First());
