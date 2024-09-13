@@ -538,6 +538,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233221336}
   m_CullTransparentMesh: 1
+--- !u!1 &337829688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4198779982451159785, guid: 2127f142fa94f014993b06510f4149e6, type: 3}
+  m_PrefabInstance: {fileID: 2122500857}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &386876743 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2677647956447651959, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
@@ -1011,6 +1016,7 @@ MonoBehaviour:
   _winScreen: {fileID: 211519032}
   _loseScreen: {fileID: 1939304085}
   boxResult: {fileID: 1610498863}
+  Result: {fileID: 337829688}
   pauseMenu: {fileID: 0}
   resultHidePose: {fileID: 2013466726}
   resultShowPose: {fileID: 467707673}
@@ -2484,6 +2490,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 747832887061259084, guid: 2127f142fa94f014993b06510f4149e6, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 747832887061259084, guid: 2127f142fa94f014993b06510f4149e6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
