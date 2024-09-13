@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Buffers.Text;
 using System.Collections;
@@ -22,8 +23,10 @@ public class CardManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI questionText;
     [SerializeField] private float secondBetweenLetters;
 
+    [SerializeField] private Transform hideQuestionPose, showQuestionPose, AlienHidePose, RobotHidePose, CharShowPose;
 
     private int currentCardID;
+    private KeyValuePair<int, Choice> choiceBaseId;
 
     private Coroutine textCoroutine;
 
@@ -34,6 +37,10 @@ public class CardManager : MonoBehaviour
         propAlienBox.SetActive(false);
         propRobotBox.SetActive(false);
         questionBox.SetActive(false);
+
+        propAlienBox.transform.position = AlienHidePose.transform.position;
+        propRobotBox.transform.position = RobotHidePose.transform.position;
+        questionBox.transform.position = hideQuestionPose.transform.position;
 
         cardDatas = Resources.LoadAll<CardData>("Cards").ToList();
 
@@ -81,24 +88,36 @@ public class CardManager : MonoBehaviour
 
         propAlienBox.GetComponent<Card>().SetCard(data.baseId, alienChoice);
         propRobotBox.GetComponent<Card>().SetCard(data.baseId, robotChoice);
+
+        propAlienBox.transform.DOMoveX(CharShowPose.transform.position.x, 2f).SetEase(Ease.OutBack);
+        propRobotBox.transform.DOMoveX(CharShowPose.transform.position.x, 2f).SetEase(Ease.OutBack);
+        questionBox.transform.DOMoveY(showQuestionPose.transform.position.y, 1f).SetEase(Ease.OutBack);
     }
 
     public void UpdateChoice(Choice data, int baseId)
     {
+        
         if (textCoroutine != null) StopCoroutine(textCoroutine);
         StartCoroutine(TypeSentence(textResult, data.resultText));
-        //textResult.text = data.resultText;
-        HidePropsoitions();
-        MallManager.Instance.InvokeOnQuestionAnswer(data, baseId);
-        cardDatas.RemoveAt(0);
-        GameManager.Instance.ShowResult();
+    	choiceBaseId = new KeyValuePair<int, Choice>(baseId, data);
+        HidePropsoitions(OnCompleteHiding);
+     }
+
+    public void HidePropsoitions(TweenCallback action)
+    {
+        propAlienBox.transform.DOMoveX(AlienHidePose.transform.position.x, 0.5f).SetEase(Ease.InBack);
+        propRobotBox.transform.DOMoveX(RobotHidePose.transform.position.x, 0.5f).SetEase(Ease.InBack);
+        questionBox.transform.DOMoveY(hideQuestionPose.transform.position.y, 0.5f).SetEase(Ease.InBack).OnComplete(action);
     }
 
-    public void HidePropsoitions()
+    private void OnCompleteHiding()
     {
         propAlienBox.SetActive(false);
         propRobotBox.SetActive(false);
         questionBox.SetActive(false);
+        MallManager.Instance.InvokeOnQuestionAnswer(choiceBaseId.Value, choiceBaseId.Key);
+        cardDatas.RemoveAt(0);
+        GameManager.Instance.ShowResult();
     }
 
     private IEnumerator TypeSentence (TextMeshProUGUI textComponent, string sentence)
