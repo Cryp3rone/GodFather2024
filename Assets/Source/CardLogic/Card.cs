@@ -8,13 +8,13 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
-public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
+public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private TextMeshProUGUI tmp;
     [SerializeField] private Button button;
     [SerializeField] private Slider buttonFill;
-    [SerializeField] private float timeToFillButton;
-    [SerializeField] private GameObject buttonBorder;
+    //[SerializeField] private float timeToFillButton;
+    //[SerializeField] private GameObject buttonBorder;
     [SerializeField] private Ease buttonAnimationEasing;
     [SerializeField] private float buttonAnimationTime;
     [SerializeField] private float buttonAnimationScale;
@@ -24,8 +24,8 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     private int baseId;
     private Choice data;
 
-    private bool fillCoroutineStarted = false;
-    private Coroutine fillCoroutine;
+    //private bool fillCoroutineStarted = false;
+    //private Coroutine fillCoroutine;
 
     public void Awake()
     {
@@ -35,7 +35,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
         buttonAnimationExitColor = button.image.color;
 
-        buttonFill.maxValue = timeToFillButton;
+        //buttonFill.maxValue = timeToFillButton;
     }
 
     public void SetCard(int sendBaseId, Choice sendData)
@@ -68,7 +68,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         //buttonBorder.gameObject.SetActive(false);
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+/*    public void OnPointerDown(PointerEventData eventData)
     {
         if (!fillCoroutineStarted)
         {
@@ -82,11 +82,11 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         fillCoroutineStarted = false;
         Debug.Log("stop coroutine");
         buttonFill.value = 0;
-    }
+    }*/
 
     private IEnumerator ButtonFillCoroutine()
     {
-        fillCoroutineStarted = true;
+        //fillCoroutineStarted = true;
         Debug.Log("coroutine started");
         while (true)
         {
