@@ -6,5 +6,6 @@ public class MallItem
 {
     public int Index;
     public SpriteRenderer SpriteRenderer;
+    public ParticleSystem ParticleSystem;
     public bool IsGood;
 }

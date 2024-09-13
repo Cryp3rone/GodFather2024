@@ -1,9 +1,11 @@
 using DG.Tweening;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.U2D;
+using static UnityEditor.Progress;
 
 public class MallManager : MonoBehaviour
 {
@@ -38,27 +40,13 @@ public class MallManager : MonoBehaviour
         {
             if(item.Index == index)
             {
-                item.SpriteRenderer.sprite = choiceData.result;
-
-                if(choiceData.sound != null) 
-                { 
-                    GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(choiceData.sound);
-                }
-
-                if(choiceData.particle != null)
-                {
-
-                }
-
-                Debug.Log(choiceData.result);
-
-                if(choiceData.isRight)
+                if (choiceData.isRight)
                 {
                     GoodPartsCount++;
                     Debug.Log(GoodPartsCount);
                 }
 
-                item.SpriteRenderer.transform.DOScale(modulesAnimationScale, modulesAnimationTime).SetEase(Ease.InExpo).OnComplete(() => resetOnComplete(item));
+                StartCoroutine(AnimationCoroutine(choiceData, item));
                 
                 return;
             }
@@ -71,5 +59,21 @@ public class MallManager : MonoBehaviour
     private void resetOnComplete(MallItem item)
     {
         item.SpriteRenderer.transform.DOScale(1, modulesAnimationTime / 4).SetEase(Ease.OutBounce);
+    }
+
+    private IEnumerator AnimationCoroutine(Choice choiceData, MallItem item)
+    {
+        item.ParticleSystem.Play();
+
+        yield return new WaitForSeconds(item.ParticleSystem.main.duration);
+
+        item.SpriteRenderer.sprite = choiceData.result;
+
+        if (choiceData.sound != null)
+        {
+            GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(choiceData.sound);
+        }
+
+        item.SpriteRenderer.transform.DOScale(modulesAnimationScale, modulesAnimationTime).SetEase(Ease.InExpo).OnComplete(() => resetOnComplete(item));
     }
 }

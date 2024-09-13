@@ -20,9 +20,13 @@ MonoBehaviour:
     isRight: 1
     proposition: "Utilisons la derni\xE8re musique que j'ai compos\xE9e."
     result: {fileID: 0}
+    particle: {fileID: 0}
+    sound: {fileID: 8300000, guid: 075f8e283a156834c875667792c7f128, type: 3}
     resultText: Excellent choix.
   badChoice:
     isRight: 0
     proposition: Utilisons de la musique pop martienne.
     result: {fileID: 0}
+    particle: {fileID: 0}
+    sound: {fileID: 8300000, guid: 84782546b2a504249a8c0a2fbde78068, type: 3}
     resultText: Excellent choix.
