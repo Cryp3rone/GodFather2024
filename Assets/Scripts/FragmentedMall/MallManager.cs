@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -12,6 +13,9 @@ public class MallManager : MonoBehaviour
 
 
     [SerializeField] private List<MallItem> _mallParts = new List<MallItem>();
+
+    [SerializeField] private float modulesAnimationScale;
+    [SerializeField] private float modulesAnimationTime;
     
     public int GoodPartsCount { get; private set; }
     public int GoodPartsToWin { get; private set; }
@@ -36,11 +40,16 @@ public class MallManager : MonoBehaviour
             {
                 item.SpriteRenderer.sprite = choiceData.result;
 
+                Debug.Log(choiceData.result);
+
                 if(choiceData.isRight)
                 {
                     GoodPartsCount++;
                     Debug.Log(GoodPartsCount);
                 }
+
+                item.SpriteRenderer.transform.DOScale(modulesAnimationScale, modulesAnimationTime).SetEase(Ease.InExpo).OnComplete(() => resetOnComplete(item));
+                
                 return;
             }
         }
@@ -48,4 +57,9 @@ public class MallManager : MonoBehaviour
 
     public void InvokeOnQuestionAnswer(Choice choiceData, int index)
         => OnQuestionAnswer?.Invoke(choiceData, index);
+
+    private void resetOnComplete(MallItem item)
+    {
+        item.SpriteRenderer.transform.DOScale(1, modulesAnimationTime / 4).SetEase(Ease.OutBounce);
+    }
 }
