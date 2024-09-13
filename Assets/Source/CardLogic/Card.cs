@@ -19,6 +19,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private float buttonAnimationTime;
     [SerializeField] private float buttonAnimationScale;
     [SerializeField] private Color buttonAnimationEnterColor;
+    [SerializeField] private AudioSource audioSource;
     private Color buttonAnimationExitColor;
 
     private int baseId;
@@ -50,7 +51,8 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         //if (buttonFill.value >= buttonFill.maxValue)
         //{
-            CardManager.Instance.UpdateChoice(data, baseId);
+        audioSource.Play();
+        CardManager.Instance.UpdateChoice(data, baseId);
         //}
     }
 

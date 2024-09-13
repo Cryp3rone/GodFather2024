@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private Transform resultHidePose, resultShowPose;
     [SerializeField] private Button resultButton;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip popupSound;
 
     private void Awake()
     {
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
         Result.SetActive(false);
         boxResult.transform.position = resultHidePose.position;
         resultButton.interactable = false;
+        audioSource.clip = popupSound;
     }
 
     public void Start()
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour
     public void ShowResult()
     {
         Result.SetActive(true);
+        audioSource.Play();
         boxResult.transform.DOMoveY(resultShowPose.position.y, 2f).SetEase(Ease.OutBack).OnComplete(() => resultButton.interactable = true);
     }
 

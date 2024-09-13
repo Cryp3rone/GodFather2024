@@ -24,6 +24,8 @@ public class CardManager : MonoBehaviour
     [SerializeField] private float secondBetweenLetters;
 
     [SerializeField] private Transform hideQuestionPose, showQuestionPose, AlienHidePose, RobotHidePose, CharShowPose;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip popupSound;
 
     private int currentCardID;
     private KeyValuePair<int, Choice> choiceBaseId;
@@ -34,6 +36,8 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
+        audioSource.clip = popupSound;
+
         propAlienBox.SetActive(false);
         propRobotBox.SetActive(false);
         questionBox.SetActive(false);
@@ -88,7 +92,7 @@ public class CardManager : MonoBehaviour
 
         propAlienBox.GetComponent<Card>().SetCard(data.baseId, alienChoice);
         propRobotBox.GetComponent<Card>().SetCard(data.baseId, robotChoice);
-
+        audioSource.Play();
         propAlienBox.transform.DOMoveX(CharShowPose.transform.position.x, 2f).SetEase(Ease.OutBack);
         propRobotBox.transform.DOMoveX(CharShowPose.transform.position.x, 2f).SetEase(Ease.OutBack);
         questionBox.transform.DOMoveY(showQuestionPose.transform.position.y, 1f).SetEase(Ease.OutBack);
