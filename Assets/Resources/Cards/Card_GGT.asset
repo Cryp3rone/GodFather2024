@@ -20,7 +20,7 @@ MonoBehaviour:
     isRight: 1
     proposition: "Cr\xE9ons une salle de repos de 100 km\xB2 pour leur permettre
       de se reposer."
-    result: {fileID: 0}
+    result: {fileID: 21300000, guid: 1acb52827f884724bb6d4aeb33eb09c9, type: 3}
     resultText: "Parfait pour se d\xE9tendre apr\xE8s une longue journ\xE9e de travail."
   badChoice:
     isRight: 0

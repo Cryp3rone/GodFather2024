@@ -19,12 +19,12 @@ MonoBehaviour:
   goodChoice:
     isRight: 1
     proposition: "Un syst\xE8me de propulsion m\xE9canique."
-    result: {fileID: 0}
+    result: {fileID: 21300000, guid: 2415f1a73ae61b34aa77506d0c692022, type: 3}
     resultText: Voici des toilettes qui feront le plaisir des clients.
   badChoice:
     isRight: 0
     proposition: "Un syst\xE8me d\u2019\xE9go\xFBt anti-gravitationnel."
-    result: {fileID: 0}
+    result: {fileID: 21300000, guid: 56d4c23d46ecfb54a9db8437c5703051, type: 3}
     resultText: "Avec ce syst\xE8me anti-gravit\xE9, les d\xE9chets reviennent directement
       \xE0 l'envoyeur. Il est impossible d'ouvrir les toilettes dans ces conditions
       !"

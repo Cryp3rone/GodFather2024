@@ -19,11 +19,11 @@ MonoBehaviour:
   goodChoice:
     isRight: 1
     proposition: "Un bonne vieille peinture bleue. C\u2019est bien le bleu."
-    result: {fileID: 0}
+    result: {fileID: 21300000, guid: d7156948d9e49fb498cfe45ec1bf4586, type: 3}
     resultText: "C\u2019est vrai que c\u2019est bien le bleu."
   badChoice:
     isRight: 0
     proposition: "Prenons la texture num\xE9ris\xE9e pour pouvoir faire varier les
       d\xE9corations facilement."
-    result: {fileID: 0}
+    result: {fileID: 21300000, guid: 91cb816b7b0a1814ca396648f5512d9e, type: 3}
     resultText: "La texture num\xE9ris\xE9e \xE9tait infest\xE9e de bugs..."

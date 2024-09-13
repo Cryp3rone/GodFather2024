@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Card_NvClients
   m_EditorClassIdentifier: 
   cardName: Card_NvClients
-  cardQuestion: Installer la statue de la paix intergalactique ?
+  cardQuestion: Comment attirer de nouveaux clients ?
   baseId: 2
   isRobotGood: 0
   goodChoice:
     isRight: 1
     proposition: Construire un hall pour accueillir tout le monde.
-    result: {fileID: 0}
+    result: {fileID: 21300000, guid: 3920e288e747a3d479680afdffb2738f, type: 3}
     resultText: Hall construit, les clients affluent !
   badChoice:
     isRight: 0
     proposition: "Mettre en place plusieurs portes d\u2019entr\xE9e."
-    result: {fileID: 0}
+    result: {fileID: 21300000, guid: eff25af87c00b2849a6caf095c33b980, type: 3}
     resultText: "Certaines portent on men\xE9 sur le vide spatial et aspir\xE9 des
       clients. Bravo."

@@ -19,12 +19,16 @@ MonoBehaviour:
   goodChoice:
     isRight: 1
     proposition: Un centre de police intergalactique.
-    result: {fileID: 0}
+    result: {fileID: 21300000, guid: 617a1e95052e83045af7630cc998f6bd, type: 3}
+    particle: {fileID: 0}
+    sound: {fileID: 0}
     resultText: "Les voleurs n\u2019ont qu\u2019\xE0 bien se tenir !"
   badChoice:
     isRight: 0
     proposition: "Une prison volontaire o\xF9 les voleurs peuvent s'enfermer eux-m\xEAmes
       s'ils ont vol\xE9."
-    result: {fileID: 0}
+    result: {fileID: 21300000, guid: ad5d400ed1180fc439170cd68f4be2f0, type: 3}
+    particle: {fileID: 0}
+    sound: {fileID: 0}
     resultText: "La prison volontaire ne fonctionne pas. Quelle surprise. Quelle
       id\xE9e aussi."

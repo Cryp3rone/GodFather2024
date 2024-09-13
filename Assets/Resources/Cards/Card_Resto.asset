@@ -19,11 +19,11 @@ MonoBehaviour:
   goodChoice:
     isRight: 1
     proposition: "Le Xlog, mat\xE9riau \xE9cologique, efficace et facile \xE0 produire."
-    result: {fileID: 0}
+    result: {fileID: 21300000, guid: 43ce46770223ab4499d57d5573f25812, type: 3}
     resultText: Les restaurants tournent pafaitement !
   badChoice:
     isRight: 0
     proposition: "Du charbon, \xE0 l\u2019ancienne."
-    result: {fileID: 0}
+    result: {fileID: 21300000, guid: 43ce46770223ab4499d57d5573f25812, type: 3}
     resultText: "La quantit\xE9 de fum\xE9e trop abondante a bloqu\xE9 les a\xE9rations
       et empoisonn\xE9 les clients."

@@ -19,7 +19,9 @@ MonoBehaviour:
   goodChoice:
     isRight: 1
     proposition: "Un arbre \xE0 feuilles. Il produit beacoup de feuilles."
-    result: {fileID: 0}
+    result: {fileID: 21300000, guid: f15462e5f391eb748a189d47db51a4e3, type: 3}
+    particle: {fileID: 0}
+    sound: {fileID: 0}
     resultText: "L\u2019arbre attire beaucoup de curieux et le centre-commercial
       s\u2019en porte bien."
   badChoice:
@@ -28,5 +30,7 @@ MonoBehaviour:
       \xE0 trou blanc qui permet de donner une r\xE9ponse avant m\xEAme que la question
       soit pos\xE9e"
     result: {fileID: 0}
+    particle: {fileID: 0}
+    sound: {fileID: 0}
     resultText: "L\u2019IA a devin\xE9 les questions avant m\xEAme d\u2019\xEAtre
       install\xE9e et s\u2019est enfui dans le darkweb, fatigu\xE9e  des clients."

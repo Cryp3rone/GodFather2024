@@ -19,11 +19,11 @@ MonoBehaviour:
   goodChoice:
     isRight: 1
     proposition: "L\u2019installer au sol."
-    result: {fileID: 0}
+    result: {fileID: 21300000, guid: d2fa385400595304f9084d35cb1a4cda, type: 3}
     resultText: "Piscine install\xE9e, tous \xE0 l\u2019eau !"
   badChoice:
     isRight: 0
     proposition: "L\u2019installer au plafond."
-    result: {fileID: 0}
+    result: {fileID: 21300000, guid: 34023dacb69cbcd47bf0dd81d38f6444, type: 3}
     resultText: "La piscine a \xE9t\xE9 install\xE9e mais les clients ne peuvent
       pas y acc\xE9der."

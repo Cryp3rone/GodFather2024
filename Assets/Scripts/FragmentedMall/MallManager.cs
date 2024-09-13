@@ -40,6 +40,16 @@ public class MallManager : MonoBehaviour
             {
                 item.SpriteRenderer.sprite = choiceData.result;
 
+                if(choiceData.sound != null) 
+                { 
+                    GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(choiceData.sound);
+                }
+
+                if(choiceData.particle != null)
+                {
+
+                }
+
                 Debug.Log(choiceData.result);
 
                 if(choiceData.isRight)

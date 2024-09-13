@@ -18,5 +18,6 @@ public class Choice
     public bool isRight = false;
     public string proposition;
     public Sprite result;
+    public AudioClip sound;
     public string resultText;
 }
