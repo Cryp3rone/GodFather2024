@@ -1,11 +1,9 @@
 using DG.Tweening;
 using System;
-using System.Buffers.Text;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 
 public class CardManager : MonoBehaviour
@@ -37,16 +35,15 @@ public class CardManager : MonoBehaviour
     private void Start()
     {
         audioSource.clip = popupSound;
-
+/*
         propAlienBox.SetActive(false);
         propRobotBox.SetActive(false);
-        questionBox.SetActive(false);
+        questionBox.SetActive(false);*/
 
         propAlienBox.transform.position = AlienHidePose.transform.position;
         propRobotBox.transform.position = RobotHidePose.transform.position;
         questionBox.transform.position = hideQuestionPose.transform.position;
 
-        cardDatas = Resources.LoadAll<CardData>("Cards").ToList();
         cardDatas = cardDatas.OrderBy(i => i.baseId).ToList();
     }
 

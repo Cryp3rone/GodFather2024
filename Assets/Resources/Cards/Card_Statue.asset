@@ -14,15 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Card_Statue
   cardQuestion: Installer la statue de la paix intergalactique ?
-  baseId: 0
+  baseId: 2
   isRobotGood: 1
   goodChoice:
     isRight: 1
     proposition: "Oui, nos anc\xEAtres le m\xE9ritent."
     result: {fileID: 21300000, guid: d4a870f95447b3f428e57f19f867973c, type: 3}
+    sound: {fileID: 0}
     resultText: Un bel hommage est rendu avec cette statue.
   badChoice:
     isRight: 0
     proposition: "Et pourquoi pas une m**** dor\xE9e \xE0 la place ?"
     result: {fileID: 21300000, guid: 52ce2eb7e64504442b44157a90293f5d, type: 3}
+    sound: {fileID: 0}
     resultText: "M**** dor\xE9e construite. Pourquoi avoir fait-\xE7a ?"

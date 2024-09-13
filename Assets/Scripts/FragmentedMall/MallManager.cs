@@ -2,10 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
-using UnityEngine.U2D;
-using static UnityEditor.Progress;
 
 public class MallManager : MonoBehaviour
 {

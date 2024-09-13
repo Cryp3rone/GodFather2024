@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Card_NvClients
   cardQuestion: Comment attirer de nouveaux clients ?
-  baseId: 2
+  baseId: 0
   isRobotGood: 0
   goodChoice:
     isRight: 1
