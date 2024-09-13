@@ -1326,6 +1326,8 @@ MonoBehaviour:
   - Index: 4
     SpriteRenderer: {fileID: 2009339254}
     IsGood: 0
+  modulesAnimationScale: 0
+  modulesAnimationTime: 0
 --- !u!4 &1443361132
 Transform:
   m_ObjectHideFlags: 0
@@ -1680,6 +1682,34 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 5010234121125747831, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: buttonAnimationTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010234121125747831, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: buttonAnimationScale
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010234121125747831, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: buttonAnimationEasing
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010234121125747831, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: buttonAnimationEnterColor.a
+      value: 0.6509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010234121125747831, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: buttonAnimationEnterColor.b
+      value: 0.8018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010234121125747831, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: buttonAnimationEnterColor.g
+      value: 0.35165036
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010234121125747831, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: buttonAnimationEnterColor.r
+      value: 0.31394622
+      objectReference: {fileID: 0}
     - target: {fileID: 5018022000333639748, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1723,6 +1753,34 @@ PrefabInstance:
     - target: {fileID: 7010797645830250442, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 331
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026670973073444827, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: buttonAnimationTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026670973073444827, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: buttonAnimationScale
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026670973073444827, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: buttonAnimationEasing
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026670973073444827, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: buttonAnimationEnterColor.a
+      value: 0.6509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026670973073444827, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: buttonAnimationEnterColor.b
+      value: 0.8113208
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026670973073444827, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: buttonAnimationEnterColor.g
+      value: 0.19517621
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026670973073444827, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
+      propertyPath: buttonAnimationEnterColor.r
+      value: 0.2535685
       objectReference: {fileID: 0}
     - target: {fileID: 7036791997684892648, guid: 3624fcb3afbcdc345857b3ee51e74df9, type: 3}
       propertyPath: m_LocalPosition.y
