@@ -47,11 +47,7 @@ public class CardManager : MonoBehaviour
         questionBox.transform.position = hideQuestionPose.transform.position;
 
         cardDatas = Resources.LoadAll<CardData>("Cards").ToList();
-
-        foreach (CardData card in cardDatas)
-        {
-            Debug.Log(card.cardName);
-        }
+        cardDatas = cardDatas.OrderBy(i => i.baseId).ToList();
     }
 
     private void OnEnable()
@@ -66,8 +62,6 @@ public class CardManager : MonoBehaviour
 
     public void ShowPropositions(CardData data)
     {
-        Debug.Log("show proposition");
-
         propAlienBox.SetActive(true);
         propRobotBox.SetActive(true);
         questionBox.SetActive(true);

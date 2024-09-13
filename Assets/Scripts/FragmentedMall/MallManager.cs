@@ -43,7 +43,6 @@ public class MallManager : MonoBehaviour
                 if (choiceData.isRight)
                 {
                     GoodPartsCount++;
-                    Debug.Log(GoodPartsCount);
                 }
 
                 StartCoroutine(AnimationCoroutine(choiceData, item));
